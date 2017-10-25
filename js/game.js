@@ -1,4 +1,3 @@
-// JavaScript source code
 var game = new Phaser.Game(800, 600, Phaser.AUTO, null, 'gameDiv');
 
 game.state.add('boot', bootState);

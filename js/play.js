@@ -1,3 +1,4 @@
+
 ﻿var playState = {
     create: function () {
         var player = game.add.sprite(100, 200, 'characters');
