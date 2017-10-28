@@ -8,7 +8,7 @@ var loadState = {
             game.scale.PageAlignvertically = true;
             game.stage.backgroundColor = '#000000';
 
-            game.load.spritesheet('player', 'assets/sprites/dude.png', 32, 48);
+            game.load.spritesheet('player', 'assets/sprites/Jerry2.png', 775, 750);
 
     },
 
