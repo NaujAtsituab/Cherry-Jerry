@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>index</title>
+    <link href="css/main.css" rel="stylesheet" />
+    <script src="js/vendor/phaser.min.js"></script>
+    <script src="js/boot.js"></script>
+    <script src="js/load.js"></script>
+    <script src="js/title.js"></script>
+    <script src="js/play.js"></script>
+    <script src="js/game.js"></script>
+    <title>CherryPits</title>
+
+</head>
+<body>
+
+    <div id="gameDiv"> </div>
+	
+    preload: function () {
+        var loadinglabel = game.add.text(80, 150, 'loading...', {font: '30px courier', fill: '#ffffff}' );
+
+            game.scale.scalemode = phaser.scalemanager.show_all;
+            game.scale.PageAlignhorizonally = true;
+            game.scale.PageAlignvertically = true;
+            game.stage.backgroundColor = '#000000';
+
+            game.load.spritesheet('player', 'assets/sprites/Jerry2.png', 879, 1101);
+
+    },
+
+    create: function () {
+       game.physics.startSystem(Phaser.Physics.ARCADE);
+    }
+       
+
+</body>
+</html>
