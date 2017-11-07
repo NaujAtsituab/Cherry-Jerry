@@ -2,13 +2,14 @@
 var loadState = {
     preload: function () {
         var loadinglabel = game.add.text(160, 300, 'loading...', {font: '30px courier', fill: '#ffffff'} );
-
+		//var cursors;
             game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
             game.scale.PageAlignHorizonally = true;
             game.scale.PageAlignVertically = true;
-            game.stage.backgroundColor = '#DEB887';
-
-            game.load.spritesheet('Jerry', 'assets/sprites/Jerry2.png',879, 1101);
+            game.stage.backgroundColor = '#505050';
+			
+			//cursors = game.input.keyboard.createCursorsKeys();
+            game.load.spritesheet('Jerry', 'assets/sprites/Jerry3.png',945, 1067);
 			
     },
 
