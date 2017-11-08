@@ -11,6 +11,9 @@ var loadState = {
 			//cursors = game.input.keyboard.createCursorsKeys();
             game.load.spritesheet('Jerry', 'assets/sprites/Jerry3.png',945, 1067);
 			
+			game.load.tilemap('world','assets/maps/World/World.json',null,Phaser.Tilemap.TILED_JSON);
+			game.load.image('tiles1', 'assets/maps/inUse/5-01.png');
+		  //game.load.image('platform','assets/maps/inUse/platform.png');
     },
 
     create: function () {

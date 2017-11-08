@@ -4,30 +4,35 @@
 	
     create: function () {
 		var self = this;
+		map = game.add.tilemap('world');
+		
+		map.addTilesetImage('5-01', 'tiles1');
+		//self.map.addTilesetImage('platform','platform');
+		
+		//map.setCollision
+		background1 = map.createLayer('background1');
+		//self.platform = self.map.createLayer('platform');
+		
 		self.player = game.add.sprite(100,300,'Jerry');    
         self.player.frame= 0;
 		game.add.existing(self.player);
         self.player.anchor.set(.5,1);
 		self.player.scale.setTo(0.1,0.1);
-	//  self.player.animations.add('wait',[0,3,4],2, true); 
 		self.player.animations.add('move',[0,1],10);
 	//  self.player.animations.add('jump', [0,5],2,true);
+		cursors = game.input.keyboard.createCursorKeys();
 		game.physics.enable(self.player, Phaser.Physics.ARCADE);
 		
     },
+	
     update: function () {
 		
 		var self = this;
-		
-		//self.player.frame=0;
-		 self.player.animations.play('move');
-		self.player.body.velocity.x = 0;
-		//self.player.frame = 1;
-		/*if (cursors.left.is.Down)
+		if (cursors.left.isDown)
 		{
 			self.player.body.velocity.x = -150;
 			self.player.animations.play('move');
-			
+			self.player.scale.setTo(-0.1,0.1);
 			
 			
 		}
@@ -35,18 +40,19 @@
 		{
 			self.player.body.velocity.x = 150;
 			self.player.animations.play('move');
-			
+			//self.player.scale.x = 1;
+			self.player.scale.setTo(0.1,0.1);
 		}
 		else
 		{
 			self.player.animations.stop();
-			self.player.frame = 4;
+			self.player.body.velocity.x = 0;
+			self.player.frame = 3;
 		}
 		if (cursors.up.isDown && self.player.body.touching.down && hitPlatform)
 		{
 			self.player.frame = 5;
-			self.player.body.velocity.y = -350;
-		
-		}*/
+			self.player.body.velocity.y = -350;	
+		}
 	}
 }
