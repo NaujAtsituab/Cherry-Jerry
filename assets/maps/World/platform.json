@@ -1,24 +1,11 @@
-{ "columns":0,
- "grid":
-    {
-     "height":1,
-     "orientation":"orthogonal",
-     "width":1
-    },
+{ "columns":1,
+ "image":"platform.png",
+ "imageheight":8,
+ "imagewidth":8,
  "margin":0,
  "name":"platform",
  "spacing":0,
  "tilecount":1,
- "tileheight":128,
- "tiles":
-    {
-     "0":
-        {
-         "image":"..\/inUse\/platform.png",
-         "imageheight":128,
-         "imagewidth":128
-        }
-    },
- "tilewidth":128,
- "type":"tileset"
+ "tileheight":8,
+ "tilewidth":8
 }

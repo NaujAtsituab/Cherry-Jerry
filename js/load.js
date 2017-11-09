@@ -8,12 +8,9 @@ var loadState = {
             game.scale.PageAlignVertically = true;
             game.stage.backgroundColor = '#505050';
 			
-			
-            
-			game.load.tilemap('world','assets/maps/World/World.json',null,Phaser.Tilemap.TILED_JSON);
-			
-			game.load.image('back', 'assets/maps/inUse/5-01.png');
-		    game.load.image('ground','assets/maps/inUse/platform.png');
+			this.load.tilemap('World','assets/maps/World/World.json',null,Phaser.Tilemap.TILED_JSON);		
+			this.load.image('5-01', 'assets/maps/World/5-01.png');
+		    this.load.image('platform1','assets/maps/World/platform.png');
 			
 			game.load.spritesheet('Jerry', 'assets/sprites/Jerry3.png',945, 1067);
     },

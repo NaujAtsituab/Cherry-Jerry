@@ -1,5 +1,5 @@
 { "columns":1,
- "image":"..\/inUse\/5-01.png",
+ "image":"5-01.png",
  "imageheight":1024,
  "imagewidth":1024,
  "margin":0,
@@ -7,6 +7,5 @@
  "spacing":0,
  "tilecount":1,
  "tileheight":1024,
- "tilewidth":1024,
- "type":"tileset"
+ "tilewidth":1024
 }
