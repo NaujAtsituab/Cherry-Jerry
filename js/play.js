@@ -26,15 +26,14 @@
 		
 		this.game.world.addAt(this.player,1);
 		cursors = game.input.keyboard.createCursorKeys();
-		this.game.physics.enable(this.player);
+		this.game.physics.enable(this.player, Phaser.Physics.ARCADE);
 		this.player.body.collideWorldBounds = true;  
 		this.player.body.gravity.y = 400;
-		this.game.physics.enable(blockedLayer);
-		//this.map.setCollision(1, true, blockedLayer);
+		//this.game.physics.enable(blockedLayer);
+		//this.map.setCollisionBetween(0, 10, true, blockedLayer);
     },
 	
     update: function () {
-		this.map.setCollision(1, true, this.blockedLayer);
 		this.game.physics.arcade.collide(this.player, this.blockedLayer);
 		
 		if (cursors.left.isDown)
