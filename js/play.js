@@ -4,16 +4,19 @@
 	
     create: function () {
 		var self = this;
-		/*map = game.add.tilemap('world');
+		map = game.add.tilemap('world');
 		
-		map.addTilesetImage('5-01', 'background2');
-		map.addTilesetImage('platform','platform2');
+		map.addTilesetImage('5-01', 'back');
+		map.addTilesetImage('platform','ground');
 		
-		map.setCollision
-		layer = map.createLayer('background1');
-		layer.resizeWorld();
-		layer2 = map.createLayer('platform1');
-		layer2.resizeWorld();*/
+		
+		map.createLayer('Background');
+		
+		map.createFromObjects('Platform');
+		
+		Background.resizeWorld();
+		
+		
 		
 		self.player = game.add.sprite(100,300,'Jerry');    
         self.player.frame= 0;
