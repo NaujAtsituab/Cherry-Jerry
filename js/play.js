@@ -4,18 +4,20 @@
 	
     create: function () {
 		
-		this.map = this.game.add.tilemap('World');	
-		this.map.addTilesetImage('5-01', '5-01');
-		this.map.addTilesetImage('platform','platform1');
+		map = game.add.tilemap('World');	
+		map.addTilesetImage('5-01', '5-01');
+		map.addTilesetImage('platform','platform1');
 		
+		backLayer = map.createLayer('background1').resizeWorld();	
+		blockedLayer = map.createLayer('platform');
+		alfieLayer = map.createLayer('Alfie');
 		
-		var backgroundLayer = this.map.createLayer('background1').resizeWorld();
+		//this.game.physics.enable(blockedLayer);
+		//this.map.setCollisionBetween([0,1]);
+		//blockedLayer.debug = true;
 		
-		var blockedLayer = this.map.createLayer('platform');
-		
-		
-		
-		
+		map.setLayer(blockedLayer);
+		map.setCollisionBetween(0, 1);
 		
 		this.player = game.add.sprite(100,800,'Jerry');    
         this.player.frame= 0;
@@ -26,44 +28,44 @@
 		
 		this.game.world.addAt(this.player,1);
 		cursors = game.input.keyboard.createCursorKeys();
-		this.game.physics.enable(this.player, Phaser.Physics.ARCADE);
+		this.physics.enable(this.player, Phaser.Physics.ARCADE);
 		this.player.body.collideWorldBounds = true;  
-		this.player.body.gravity.y = 400;
-		//this.game.physics.enable(blockedLayer);
-		//this.map.setCollisionBetween(0, 10, true, blockedLayer);
+		this.player.body.gravity.y = 200;
+		
+		
+		
     },
 	
     update: function () {
-		this.game.physics.arcade.collide(this.player, this.blockedLayer);
+		
+		game.physics.arcade.collide(this.player, blockedLayer);
 		
 		if (cursors.left.isDown)
 		{
-			this.player.body.velocity.x = -150;
-			this.player.animations.play('move');
 			this.player.scale.setTo(-0.1,0.1);
-			
-			
+			this.player.body.velocity.x = -300;
+			this.player.animations.play('move');	
 		}
 		else if (cursors.right.isDown)
 		{
-			this.player.body.velocity.x = 500;
-			this.player.animations.play('move');
 			this.player.scale.setTo(0.1,0.1);
+			this.player.body.velocity.x = 300;
+			this.player.animations.play('move');		
 		}
 		else
-		{
-			this.player.animations.stop();
+		{	
 			this.player.body.velocity.x = 0;
 			this.player.frame = 3;
+			this.player.animations.stop();
 		}
 		if (cursors.up.isDown && this.player.body.onFloor())
 		{
 			this.player.frame = 4;
-			this.player.body.velocity.y = -350;	
+			this.player.body.velocity.y = -300;	
 		}
 		if (!this.player.body.onFloor())
 		{
 			this.player.frame=4;
-		}
+		}	
 	}
 }
